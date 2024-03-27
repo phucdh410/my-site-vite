@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      //Chỉnh sửa Alias nhớ vào vite config theo !!!
+      "@/components/*": ["./src/common/components/*"],
+      "@/constants/*": ["./src/common/constants/*"],
+      "@/funcs/*": ["./src/utils/funcs/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/apis/*": ["./src/apis/*"],
+      "@/*": ["./src/*"]
+    }
+  }
+}
