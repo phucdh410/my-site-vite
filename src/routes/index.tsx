@@ -1,12 +1,13 @@
 import { Outlet, RouteObject } from 'react-router-dom';
 
+import { CErrorPage } from '@/components/others';
 import { asyncLayout } from '@/funcs/route';
 
 export const routes: RouteObject[] = [
   {
     path: '/',
     element: <Outlet />,
-    errorElement: <div>Error</div>,
+    errorElement: <CErrorPage />,
     children: [
       {
         path: '/',

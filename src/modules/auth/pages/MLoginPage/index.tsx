@@ -10,8 +10,11 @@ import { useAuthCheck } from '@/utils/hooks';
 
 import { defaultValues, resolver } from '../../form';
 
+const a = undefined;
+
 const MLoginPage = () => {
   useAuthCheck();
+  const b = a.name.age.tumlum;
 
   //#region Data
   const { control, handleSubmit } = useForm<ILoginParams>({
