@@ -35,7 +35,9 @@ export const routes: RouteObject[] = [
           },
           {
             path: '/file',
-            element: <div>File page</div>,
+            element: asyncLayout(
+              () => import('@/modules/file/pages/MFilesRootPage'),
+            ),
           },
         ],
       },
