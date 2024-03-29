@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 export interface IAuthState {
   isLogined: boolean;
@@ -8,13 +6,6 @@ export interface IAuthState {
 
 const initialState: IAuthState = {
   isLogined: false,
-};
-
-const persistConfig = {
-  key: 'auth',
-  version: 1,
-  storage: storage,
-  whitelist: ['isLogined'],
 };
 
 export const authSlice = createSlice({
@@ -29,4 +20,4 @@ export const authSlice = createSlice({
 
 export const { updateLoginStatus } = authSlice.actions;
 
-export default persistReducer(persistConfig, authSlice.reducer);
+export const authReducer = authSlice.reducer;
