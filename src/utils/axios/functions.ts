@@ -64,6 +64,7 @@ export const logoutFunc = async () => {
   } finally {
     clearAuthToken();
     clearProfile();
+
     store.dispatch(updateLoginStatus(false));
   }
 };
