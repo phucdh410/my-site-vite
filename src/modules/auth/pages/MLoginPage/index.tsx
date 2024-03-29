@@ -11,7 +11,7 @@ import { useAuthCheck } from '@/utils/hooks';
 import { defaultValues, resolver } from '../../form';
 
 const MLoginPage = () => {
-  useAuthCheck();
+  useAuthCheck('login');
 
   //#region Data
   const { control, handleSubmit } = useForm<ILoginParams>({

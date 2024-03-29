@@ -13,7 +13,7 @@ import { CSidebar } from './CSidebar';
 import { ToggleSidebarButton } from './StyledComponents';
 
 const CMainLayout = () => {
-  useAuthCheck();
+  useAuthCheck('main');
 
   //#region Data
   const [open, setOpen] = useState<boolean>(true);
