@@ -1,5 +1,7 @@
 import axios, { AxiosError } from 'axios';
 
+import { handleTimeout } from './functions';
+
 const axiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL}/api`,
   timeout: import.meta.env.VITE_API_TIMEOUT || 500000,
@@ -17,6 +19,9 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   (error: AxiosError<any>) => {
+    if (error.code === 'ECONNABORTED') {
+      handleTimeout();
+    }
     if (error?.response?.status === 403) {
       console.log('Logout, không có quyền');
       return Promise.reject(error);

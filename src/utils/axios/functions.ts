@@ -69,3 +69,9 @@ export const logoutFunc = async () => {
   }
 };
 //#endregion
+
+//#region Interceptor
+export const handleTimeout = () => {
+  throw new Error('Quá thời gian chờ, vui lòng thử lại');
+};
+//#endregion
