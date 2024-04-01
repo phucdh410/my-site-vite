@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 
-import { handleTimeout } from './functions';
+import { handleTimeout, refreshToken, webLogout } from './functions';
 
 const axiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL}/api`,
@@ -18,13 +18,31 @@ axiosInstance.interceptors.response.use(
   (response) => {
     return response;
   },
-  (error: AxiosError<any>) => {
+  async (error: AxiosError<any>) => {
     if (error.code === 'ECONNABORTED') {
       handleTimeout();
     }
     if (error?.response?.status === 403) {
       console.log('Logout, không có quyền');
       return Promise.reject(error);
+    }
+    if (error?.response?.status === 401) {
+      if (error.response.data?.errorCode === 401) {
+        const originalRequest = error.config;
+        console.log('🚀 ~ originalRequest:', originalRequest);
+
+        if (originalRequest && !originalRequest._retry) {
+          originalRequest._retry = true;
+
+          const newToken = await refreshToken();
+
+          originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
+
+          return axiosInstance(originalRequest);
+        }
+      } else {
+        webLogout();
+      }
     }
 
     const _error = {

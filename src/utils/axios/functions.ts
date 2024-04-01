@@ -44,6 +44,7 @@ export const loginFunc = async (body: ILoginParams) => {
   const res = await authApi.login(body);
 
   const access_token = res?.data?.data?.access_token;
+  const refresh_token = res?.data?.data?.refresh_token;
 
   if (access_token) {
     setAuthToken(access_token);
@@ -56,21 +57,44 @@ export const loginFunc = async (body: ILoginParams) => {
 
     saveProfile(profile);
   }
+  if (refresh_token) {
+    Cookies.set('refresh', refresh_token);
+  }
+};
+
+export const webLogout = async () => {
+  clearAuthToken();
+  clearProfile();
+  Cookies.remove('refresh');
+
+  store.dispatch(updateLoginStatus(false));
 };
 
 export const logoutFunc = async () => {
   try {
     await authApi.logout();
   } finally {
-    clearAuthToken();
-    clearProfile();
-
-    store.dispatch(updateLoginStatus(false));
+    webLogout();
   }
 };
-//#endregion
 
-//#region Interceptor
+export const refreshToken = async () => {
+  try {
+    const refresh_token = Cookies.get('refresh') as string;
+
+    const res = await authApi.refresh({ refresh_token });
+
+    const { access_token, refresh_token: newRfToken } = res.data.data;
+
+    setAuthToken(access_token);
+    Cookies.set('refresh', newRfToken);
+
+    return access_token;
+  } catch (error) {
+    webLogout();
+  }
+};
+
 export const handleTimeout = () => {
   throw new Error('Quá thời gian chờ, vui lòng thử lại');
 };
