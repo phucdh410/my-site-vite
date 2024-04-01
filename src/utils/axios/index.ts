@@ -29,10 +29,10 @@ axiosInstance.interceptors.response.use(
     if (error?.response?.status === 401) {
       if (error.response.data?.errorCode === 401) {
         const originalRequest = error.config;
-        console.log('🚀 ~ originalRequest:', originalRequest);
+        let retry = false;
 
-        if (originalRequest && !originalRequest._retry) {
-          originalRequest._retry = true;
+        if (originalRequest && !retry) {
+          retry = true;
 
           const newToken = await refreshToken();
 
