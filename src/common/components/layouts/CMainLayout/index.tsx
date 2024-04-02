@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import { Box, Stack } from '@mui/material';
 
+import { HEADER_HEIGHT } from '@/constants/layout-size';
 import { useAuthCheck } from '@/utils/hooks';
 
 import { CSmoothScrollbar } from '../..';
@@ -42,6 +43,7 @@ const CMainLayout = () => {
             pt={4}
             overflow="auto"
             className="main-content-wrapper"
+            minHeight={`calc(100vh - ${HEADER_HEIGHT}px)`}
           >
             <Outlet />
           </Box>

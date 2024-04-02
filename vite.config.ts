@@ -13,6 +13,9 @@ export default defineConfig({
       '@/constants': fileURLToPath(
         new URL('./src/common/constants', import.meta.url),
       ),
+      '@/assets': fileURLToPath(
+        new URL('./src/common/assets', import.meta.url),
+      ),
       '@/funcs': fileURLToPath(new URL('./src/utils/funcs', import.meta.url)),
       '@/types': fileURLToPath(new URL('./src/types', import.meta.url)),
       '@/styles': fileURLToPath(new URL('./src/styles', import.meta.url)),

@@ -93,6 +93,10 @@ let theme = createTheme({
       main: 'rgb(110, 163, 248)',
       contrastText: '#ffffff',
     },
+    success: {
+      main: 'rgb(91, 228, 155)',
+      contrastText: '#ffffff',
+    },
     error: {
       main: 'rgb(211, 47, 47)',
       contrastText: '#ffffff',

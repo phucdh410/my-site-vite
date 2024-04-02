@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import { CGrid } from '@/components/muis';
 import { IProfile } from '@/types/auth';
 
-import { MCheckNowButton, MWelcomeSvg } from '../../components';
+import { MCheckNowButton, MSwiper, MWelcomeSvg } from '../../components';
 
 const MDashboardPage = () => {
   //#region Data
@@ -26,11 +26,12 @@ const MDashboardPage = () => {
 
   //#region Render
   return (
-    <Container maxWidth="_3xl">
-      <CGrid container gap={1.5}>
-        <CGrid xs={8}>
+    <Container maxWidth="_2xl">
+      <CGrid container spacing={3}>
+        <CGrid xs>
           <Stack
             direction="row"
+            height="100%"
             borderRadius="16px"
             sx={{
               background:
@@ -80,7 +81,9 @@ const MDashboardPage = () => {
             </Typography>
           </Stack>
         </CGrid>
-        <CGrid xs={4}></CGrid>
+        <CGrid xs="auto">
+          <MSwiper />
+        </CGrid>
       </CGrid>
     </Container>
   );
