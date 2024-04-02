@@ -39,7 +39,7 @@ const CMainLayout = () => {
           <Box
             flex={1}
             px={2}
-            pt={2}
+            pt={4}
             overflow="auto"
             className="main-content-wrapper"
           >

@@ -14,8 +14,10 @@ export const routes: RouteObject[] = [
         element: asyncLayout(() => import('@/components/layouts/CMainLayout')),
         children: [
           {
-            path: '/app',
-            element: <div>App page</div>,
+            path: '/',
+            element: asyncLayout(
+              () => import('@/modules/dashboard/pages/MDashboardPage'),
+            ),
           },
           {
             path: '/e-commerce',

@@ -10,7 +10,10 @@ export interface ILoginResponse {
 
 export interface IProfile {
   id: string;
-  name: string;
+  fullname: string;
+  username: string;
+  address: string;
+  phone_number: string;
 }
 
 export interface IRefreshParams {
