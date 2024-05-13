@@ -14,7 +14,7 @@ export const CToolbar = () => {
         <Group />
       </IconButton>
       <IconButton>
-        <Settings />
+        <Settings sx={{ animation: 'spin 3s linear infinite' }} />
       </IconButton>
       <ButtonBase
         onClick={logoutFunc}

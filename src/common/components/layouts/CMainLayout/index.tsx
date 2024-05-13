@@ -5,8 +5,8 @@ import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import { Box, Stack } from '@mui/material';
 
 import { HEADER_HEIGHT } from '@/constants/layout-size';
-import { useAuthCheck } from '@/utils/hooks';
 
+// import { useAuthCheck } from '@/utils/hooks';
 import { CSmoothScrollbar } from '../..';
 
 import { CHeader } from './CHeader';
@@ -14,7 +14,7 @@ import { CSidebar } from './CSidebar';
 import { ToggleSidebarButton } from './StyledComponents';
 
 const CMainLayout = () => {
-  useAuthCheck('main');
+  // useAuthCheck('main'); //! TMP Not Check Auth
 
   //#region Data
   const [open, setOpen] = useState<boolean>(true);
