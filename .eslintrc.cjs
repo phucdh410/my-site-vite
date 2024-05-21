@@ -29,6 +29,7 @@ module.exports = {
     'react-hooks',
     '@typescript-eslint',
     'simple-import-sort',
+    'unused-imports',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -86,6 +87,16 @@ module.exports = {
       },
     ],
     'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
