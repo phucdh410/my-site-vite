@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { Container, Stack, SvgIcon, Typography } from '@mui/material';
 import Cookies from 'js-cookie';
 
+import { CThemeSwitch } from '@/components/controls';
 import { CGrid } from '@/components/muis';
 import { IProfile } from '@/types/auth';
 
@@ -85,6 +86,9 @@ const MDashboardPage = () => {
           <MSwiper />
         </CGrid>
       </CGrid>
+      <Stack mt={3}>
+        <CThemeSwitch />
+      </Stack>
     </Container>
   );
   //#endregion

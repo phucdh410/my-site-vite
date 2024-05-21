@@ -5,3 +5,4 @@ export * from './CNumberInput';
 export * from './CPasswordInput';
 export * from './CSearchInput';
 export * from './CTextarea';
+export * from './CThemeSwitch';
