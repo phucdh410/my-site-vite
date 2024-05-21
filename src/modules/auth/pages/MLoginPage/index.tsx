@@ -6,7 +6,7 @@ import { CInput, CPasswordInput } from '@/components/controls';
 import { noti } from '@/funcs/noti';
 import { ILoginParams } from '@/types/auth';
 import { loginFunc } from '@/utils/axios/functions';
-import { useAuthCheck } from '@/utils/hooks';
+import { useAuthCheck } from '@/utils/hooks/auth';
 
 import { defaultValues, resolver } from '../../form';
 

@@ -57,7 +57,6 @@ export const MSwiper = () => {
   //   const onPaginate = (newIndex: number) => () => {
   //     swiperRef.current?.slideTo(newIndex);
   //   };
-
   //#endregion
 
   //#region Render
@@ -84,7 +83,7 @@ export const MSwiper = () => {
       >
         {DATA.map((slide, index) => (
           <SwiperSlide key={index}>
-            {({ isActive }) => (
+            {() => (
               <Box height="100%" width="100%" position="relative">
                 <img src={slide.image} alt="" />
                 <Box

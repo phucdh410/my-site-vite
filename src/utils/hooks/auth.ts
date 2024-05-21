@@ -1,14 +1,11 @@
 import { useEffect } from 'react';
-import { useSelector as useReduxSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import Cookies from 'js-cookie';
 
-import { IRootState } from '@/redux';
-
 import { setAuthToken } from '../axios/functions';
 
-export const useSelector = useReduxSelector.withTypes<IRootState>();
+import { useSelector } from './redux';
 
 export const useAuthCheck = (layout: 'login' | 'main') => {
   const isLogined = useSelector((state) => state.auth.isLogined);

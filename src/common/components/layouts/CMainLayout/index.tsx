@@ -6,7 +6,6 @@ import { Box, Stack } from '@mui/material';
 
 import { HEADER_HEIGHT } from '@/constants/layout-size';
 
-// import { useAuthCheck } from '@/utils/hooks';
 import { CSmoothScrollbar } from '../..';
 
 import { CHeader } from './CHeader';
