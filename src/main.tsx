@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { QueryClientProvider } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 import timezone from 'dayjs/plugin/timezone';
@@ -14,6 +15,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { persistor, store } from './redux/index.ts';
 import theme from './themes/index.tsx';
+import { queryClient } from './utils/query/index.ts';
 import App from './App.tsx';
 
 import '@/styles/index.scss';
@@ -31,11 +33,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <LocalizationProvider dateAdapter={AdapterDayjs}></LocalizationProvider>
     <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
-      </Provider>
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+          </PersistGate>
+        </Provider>
+      </QueryClientProvider>
     </ThemeProvider>
   </React.StrictMode>,
 );

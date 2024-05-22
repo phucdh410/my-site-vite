@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
 
 import { Container, Stack, SvgIcon, Typography } from '@mui/material';
+import { useQuery } from '@tanstack/react-query';
 import Cookies from 'js-cookie';
 
-import { CThemeSwitch } from '@/components/controls';
 import { CGrid } from '@/components/muis';
 import { IProfile } from '@/types/auth';
+import { get } from '@/utils/axios/methods';
 
 import { MCheckNowButton, MSwiper, MWelcomeSvg } from '../../components';
 
@@ -20,6 +21,13 @@ const MDashboardPage = () => {
 
     return null;
   }, [Cookies.get('profile')]);
+
+  const { data } = useQuery({
+    queryKey: ['phones'],
+    queryFn: () => get('/products/getAll.json'),
+    select: (response) => response.data.data,
+  });
+  console.log(data);
   //#endregion
 
   //#region Event
@@ -86,9 +94,13 @@ const MDashboardPage = () => {
           <MSwiper />
         </CGrid>
       </CGrid>
-      <Stack mt={3}>
-        <CThemeSwitch />
-      </Stack>
+      <CGrid container mt={3} spacing={1.5} columns={10}>
+        {data.map((e) => (
+          <CGrid key={e?.id} xs={2}>
+            <img src={e?.image} alt="" />
+          </CGrid>
+        ))}
+      </CGrid>
     </Container>
   );
   //#endregion

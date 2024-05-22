@@ -1,0 +1,77 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "iPhone 15 Pro Max",
+      "image": "/api/products/images/iphone-15-pro-max.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Samsung Galaxy S23 Ultra 5G",
+      "image": "/api/products/images/samsung-galaxy-s23.jpg"
+    },
+    {
+      "id": "3",
+      "title": "OPPO Reno11 F 5G",
+      "image": "/api/products/images/oppo-reno11-f.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Xiaomi Redmi Note 13",
+      "image": "/api/products/images/xiaomi-redmi-note-13.jpg"
+    },
+    {
+      "id": "5",
+      "title": "vivo Y100",
+      "image": "/api/products/images/vivo-y100.jpg"
+    },
+    {
+      "id": "6",
+      "title": "realme C65",
+      "image": "/api/products/images/realme-c65.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Samsung Galaxy A55 5G",
+      "image": "/api/products/images/samsung-galaxy-a55-5g.jpg"
+    },
+    {
+      "id": "8",
+      "title": "iPhone 13",
+      "image": "/api/products/images/iphone-13.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Samsung Galaxy M54 5G",
+      "image": "/api/products/images/samsung-galaxy-m54.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Xiaomi Redmi Note 13 Pro",
+      "image": "/api/products/images/xiaomi-redmi-note-13-pro.jpg"
+    },
+    {
+      "id": "11",
+      "title": "OPPO A58",
+      "image": "/api/products/images/oppo-a58.jpg"
+    },
+    {
+      "id": "12",
+      "title": "realme Note 50",
+      "image": "/api/products/images/realme-note-50.jpg"
+    },
+    {
+      "id": "13",
+      "title": "Samsung Galaxy S23 FE 5G",
+      "image": "/api/products/images/samsung-galaxy-s23-fe.jpg"
+    },
+    {
+      "id": "14",
+      "title": "Samsung Galaxy A35 5G",
+      "image": "/api/products/images/samsung-galaxy-a35-5g.jpg"
+    }
+  ],
+  "status": 200,
+  "message": "",
+  "errorCode": null
+}
