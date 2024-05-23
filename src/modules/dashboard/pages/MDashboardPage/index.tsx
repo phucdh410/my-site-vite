@@ -95,11 +95,13 @@ const MDashboardPage = () => {
         </CGrid>
       </CGrid>
       <CGrid container mt={3} spacing={1.5} columns={10}>
-        {data.map((e) => (
-          <CGrid key={e?.id} xs={2}>
-            <img src={e?.image} alt="" />
-          </CGrid>
-        ))}
+        {data?.length &&
+          data.length > 0 &&
+          data.map((e) => (
+            <CGrid key={e?.id} xs={2}>
+              <img src={e?.image} alt="" />
+            </CGrid>
+          ))}
       </CGrid>
     </Container>
   );

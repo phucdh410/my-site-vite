@@ -41,6 +41,12 @@ export const routes: RouteObject[] = [
               () => import('@/modules/file/pages/MFilesRootPage'),
             ),
           },
+          {
+            path: '/studio',
+            element: asyncLayout(
+              () => import('@/modules/studio/pages/MStudioPage'),
+            ),
+          },
         ],
       },
       {

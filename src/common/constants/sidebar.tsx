@@ -1,5 +1,6 @@
 import {
   AccountBalance,
+  AddAPhoto,
   CalendarMonth,
   Chat,
   Description,
@@ -58,6 +59,13 @@ export const SIDEBAR: ISidebar = [
         label: 'File',
         path: '/file',
         icon: <Description />,
+        children: false,
+      },
+      {
+        id: 'Studio',
+        label: 'Studio',
+        path: '/studio',
+        icon: <AddAPhoto />,
         children: false,
       },
     ],

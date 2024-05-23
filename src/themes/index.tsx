@@ -298,6 +298,11 @@ theme = createTheme(theme, {
         arrow: true,
       },
     },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: '_2xl',
+      },
+    },
   } as Components<Omit<Theme, 'components'>>,
 });
 //#endregion
