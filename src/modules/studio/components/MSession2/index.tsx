@@ -8,7 +8,7 @@ import { MSessionTitle } from '../MSessionTitle';
 
 export const MSession2 = () => {
   return (
-    <Container sx={{ pt: 5 }}>
+    <Container sx={{ pt: 7 }}>
       <MSessionTitle>Our Client</MSessionTitle>
       <Stack
         direction="row"
