@@ -303,6 +303,11 @@ theme = createTheme(theme, {
         maxWidth: '_2xl',
       },
     },
+    MuiSkeleton: {
+      defaultProps: {
+        animation: 'wave',
+      },
+    },
   } as Components<Omit<Theme, 'components'>>,
 });
 //#endregion

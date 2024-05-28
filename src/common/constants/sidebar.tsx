@@ -6,6 +6,7 @@ import {
   Description,
   Equalizer,
   Group,
+  House,
   LocalMall,
   ShoppingCart,
   SpeedOutlined,
@@ -52,6 +53,13 @@ export const SIDEBAR: ISidebar = [
         label: 'Booking',
         path: '/booking',
         icon: <Style />,
+        children: false,
+      },
+      {
+        id: 'Hounter',
+        label: 'Hounter',
+        path: '/hounter',
+        icon: <House />,
         children: false,
       },
       {

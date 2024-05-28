@@ -36,6 +36,12 @@ export const routes: RouteObject[] = [
             element: <div>Booking page</div>,
           },
           {
+            path: '/hounter',
+            element: asyncLayout(
+              () => import('@/modules/hounter/pages/MHounterPage'),
+            ),
+          },
+          {
             path: '/file',
             element: asyncLayout(
               () => import('@/modules/file/pages/MFilesRootPage'),

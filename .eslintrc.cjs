@@ -93,8 +93,9 @@ module.exports = {
       {
         vars: 'all',
         varsIgnorePattern: '^_',
-        args: 'after-used',
-        argsIgnorePattern: '^_',
+        args: 'none',
+        // args: 'after-used',
+        // argsIgnorePattern: '^_',
       },
     ],
     '@typescript-eslint/no-unused-vars': [
