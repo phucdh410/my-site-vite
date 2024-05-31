@@ -1,21 +1,29 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
-import { HomeWork } from '@mui/icons-material';
+import { ChevronLeft, ChevronRight, HomeWork } from '@mui/icons-material';
 import { Box, ListItemIcon, ListItemText, Stack } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { SwiperInstance } from '@/types/swiper';
 
 import { MSessionTitle } from '../MSessionTitle';
 
 import { TYPES_FILTER } from './constants';
 import { MHouseItem } from './MHouseItem';
 import { DATA } from './mocks';
-import { FilterTypeButton } from './styled-components';
+import { FilterTypeButton, PaginationButton } from './styled-components';
 import { TYPES_OF_APARTMENT } from './types';
 
 import 'swiper/css';
 
 export const MRecommendation = () => {
   //#region Data
+  const swiperRef = useRef<SwiperInstance | null>(null);
+  console.log('🚀 ~ MRecommendation ~ swiperRef:', swiperRef);
+  const [cantAction, setCantAction] = useState<'prev' | 'next' | 'none'>(
+    'prev',
+  );
+
   const [currentType, setCurrentType] = useState<TYPES_OF_APARTMENT | 'All'>(
     'All',
   );
@@ -30,8 +38,27 @@ export const MRecommendation = () => {
   //#endregion
 
   //#region Event
+  const onSwiper = useCallback(
+    (swiper: SwiperInstance) => (swiperRef.current = swiper),
+    [],
+  );
+
   const onTypeChange = (newType: TYPES_OF_APARTMENT | 'All') => () => {
     setCurrentType(newType);
+  };
+
+  const onPrev = () => {
+    swiperRef.current?.slidePrev();
+  };
+
+  const onNext = () => {
+    swiperRef.current?.slideNext();
+  };
+
+  const onSlideChange = (swiper: SwiperInstance) => {
+    if (swiper.isBeginning) setCantAction('prev');
+    else if (swiper.isEnd) setCantAction('next');
+    else if (cantAction !== 'none') setCantAction('none');
   };
   //#endregion
 
@@ -64,10 +91,24 @@ export const MRecommendation = () => {
             </FilterTypeButton>
           ))}
         </Stack>
+        <Stack direction="row" gap="10px">
+          <PaginationButton onClick={onPrev} disabled={cantAction === 'prev'}>
+            <ChevronLeft />
+          </PaginationButton>
+          <PaginationButton onClick={onNext} disabled={cantAction === 'next'}>
+            <ChevronRight />
+          </PaginationButton>
+        </Stack>
       </Stack>
 
       <Box mt={3}>
-        <Swiper slidesPerView={4} spaceBetween={40} grabCursor>
+        <Swiper
+          onSwiper={onSwiper}
+          slidesPerView={4}
+          spaceBetween={40}
+          grabCursor
+          onSlideChange={onSlideChange}
+        >
           {viewData.map((house) => (
             <SwiperSlide key={house.id}>
               <MHouseItem data={house} />

@@ -1,4 +1,4 @@
-import { Chip, ListItemButton, styled } from '@mui/material';
+import { Chip, IconButton, ListItemButton, styled } from '@mui/material';
 
 import { TAGS_OF_APARTMENT } from '../types';
 export const FilterTypeButton = styled(ListItemButton)(({ theme }) => ({
@@ -52,4 +52,18 @@ export const TagChip = styled(Chip, {
         ? '#1D4ED8'
         : '#047857',
   paddingInline: '8px',
+}));
+
+export const PaginationButton = styled(IconButton)(({ theme }) => ({
+  width: '50px',
+  borderRadius: '100px',
+  backgroundColor: '#10B981',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: '#0BBB80',
+  },
+
+  '&.Mui-disabled': {
+    backgroundColor: '#E0E0E0',
+  },
 }));
