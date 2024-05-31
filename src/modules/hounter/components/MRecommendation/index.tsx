@@ -19,7 +19,7 @@ import 'swiper/css';
 export const MRecommendation = () => {
   //#region Data
   const swiperRef = useRef<SwiperInstance | null>(null);
-  console.log('🚀 ~ MRecommendation ~ swiperRef:', swiperRef);
+
   const [cantAction, setCantAction] = useState<'prev' | 'next' | 'none'>(
     'prev',
   );
