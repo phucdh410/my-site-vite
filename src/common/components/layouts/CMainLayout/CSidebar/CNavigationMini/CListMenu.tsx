@@ -97,8 +97,8 @@ export const CListMenu = ({ data }: { data: ISidebarItem }) => {
               <ListItemButton
                 key={item.label + item.path}
                 component={Link}
-                to={item.path}
-                selected={pathname.startsWith(item.path)}
+                to={data.path + item.path}
+                selected={pathname.includes(data.path + item.path)}
                 sx={{
                   padding: '0 8px',
                   fontSize: 14,

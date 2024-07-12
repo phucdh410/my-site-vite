@@ -20,6 +20,10 @@ export const routes: RouteObject[] = [
             ),
           },
           {
+            path: '/app',
+            element: <div>App page</div>,
+          },
+          {
             path: '/e-commerce',
             element: <div>E-Commerce page</div>,
           },
@@ -52,6 +56,27 @@ export const routes: RouteObject[] = [
             element: asyncLayout(
               () => import('@/modules/studio/pages/MStudioPage'),
             ),
+          },
+          {
+            path: '/user',
+            children: [
+              {
+                path: '/user/profile',
+                element: <div>User profile page</div>,
+              },
+              {
+                path: '/user/cards',
+                element: <div>User cards page</div>,
+              },
+              {
+                path: '/user/list',
+                element: <div>User list page</div>,
+              },
+              {
+                path: '/user/create',
+                element: <div>User create page</div>,
+              },
+            ],
           },
         ],
       },

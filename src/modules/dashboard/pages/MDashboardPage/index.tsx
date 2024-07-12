@@ -4,9 +4,9 @@ import { Container, Stack, SvgIcon, Typography } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import Cookies from 'js-cookie';
 
+import { productApi } from '@/apis/products.api';
 import { CGrid } from '@/components/muis';
 import { IProfile } from '@/types/auth';
-import { get } from '@/utils/axios/methods';
 
 import { MCheckNowButton, MSwiper, MWelcomeSvg } from '../../components';
 
@@ -24,7 +24,7 @@ const MDashboardPage = () => {
 
   const { data } = useQuery({
     queryKey: ['phones'],
-    queryFn: () => get('/products/getAll.json'),
+    queryFn: () => productApi.getAll(),
     select: (response) => response.data.data,
   });
   console.log(data);
