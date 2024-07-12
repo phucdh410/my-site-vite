@@ -6,9 +6,13 @@ import {
 } from '@mui/material';
 
 //#region Sidebar Item
+interface IButton {
+  to?: string;
+}
+
 export const CSidebarItem = styled(ListItemButton, {
   shouldForwardProp: (prop) => prop !== 'divider',
-})(({ theme, divider: sub }) => ({
+})<IButton>(({ theme, divider: sub }) => ({
   borderRadius: '8px',
   color: 'rgb(99, 115, 129)',
   padding: '4px 8px 4px 12px',

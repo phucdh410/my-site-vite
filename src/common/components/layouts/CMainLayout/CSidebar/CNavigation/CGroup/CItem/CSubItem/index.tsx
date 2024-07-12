@@ -28,19 +28,22 @@ export const CSubItem = ({
 
   //#region Render
   return (
-    <Link to={parentSlug + data.path}>
-      <CSidebarItem selected={selected} LinkComponent={Link} divider>
-        <CSidebarItemIcon>
-          <Box
-            height={4}
-            width={4}
-            borderRadius="50%"
-            sx={{ backgroundColor: 'currentcolor', color: 'currentcolor' }}
-          ></Box>
-        </CSidebarItemIcon>
-        <CSidebarItemText>{data.label}</CSidebarItemText>
-      </CSidebarItem>
-    </Link>
+    <CSidebarItem
+      selected={selected}
+      LinkComponent={Link}
+      to={parentSlug + data.path}
+      divider
+    >
+      <CSidebarItemIcon>
+        <Box
+          height={4}
+          width={4}
+          borderRadius="50%"
+          sx={{ backgroundColor: 'currentcolor', color: 'currentcolor' }}
+        ></Box>
+      </CSidebarItemIcon>
+      <CSidebarItemText>{data.label}</CSidebarItemText>
+    </CSidebarItem>
   );
   //#endregion
 };

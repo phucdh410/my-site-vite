@@ -65,4 +65,26 @@ export const CSidebarItemTextMobile = styled(ListItemText)(({ theme }) => ({
     color: 'inherit',
   },
 }));
+
+export const CSidebarSubItemMobile = styled(ListItemButton)<IButton>(
+  ({ theme }) => ({
+    padding: '0 8px',
+    fontSize: 14,
+    fontWeight: 600,
+    minHeight: 34,
+    borderRadius: '6px',
+    justifyContent: 'start',
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    color: '#637381',
+    '&:hover': {
+      backgroundColor: 'rgb(0 0 0 / 4%)',
+      boxShadow: 'none',
+    },
+    '&.Mui-selected': {
+      color: 'rgb(0, 167, 111)',
+      backgroundColor: 'rgba(0, 167, 111, 0.08)',
+    },
+  }),
+);
 //#endregion

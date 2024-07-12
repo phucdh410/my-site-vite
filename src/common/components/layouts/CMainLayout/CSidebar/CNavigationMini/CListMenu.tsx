@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { ChevronRight } from '@mui/icons-material';
-import { Grow, ListItemButton, Popover, Stack } from '@mui/material';
+import { Grow, Popover, Stack } from '@mui/material';
 
 import { ISidebarItem } from '@/types/sidebar/index';
 
@@ -10,6 +10,7 @@ import {
   CSidebarItemIconMobile,
   CSidebarItemMobile,
   CSidebarItemTextMobile,
+  CSidebarSubItemMobile,
 } from './StyledComponents';
 
 export const CListMenu = ({ data }: { data: ISidebarItem }) => {
@@ -94,33 +95,14 @@ export const CListMenu = ({ data }: { data: ISidebarItem }) => {
         >
           {data.children &&
             data.children.map((item) => (
-              <ListItemButton
+              <CSidebarSubItemMobile
                 key={item.label + item.path}
-                component={Link}
+                LinkComponent={Link}
                 to={data.path + item.path}
                 selected={pathname.includes(data.path + item.path)}
-                sx={{
-                  padding: '0 8px',
-                  fontSize: 14,
-                  fontWeight: 600,
-                  minHeight: 34,
-                  borderRadius: '6px',
-                  justifyContent: 'start',
-                  backgroundColor: 'transparent',
-                  boxShadow: 'none',
-                  color: '#637381',
-                  '&:hover': {
-                    backgroundColor: 'rgb(0 0 0 / 4%)',
-                    boxShadow: 'none',
-                  },
-                  '&.Mui-selected': {
-                    color: 'rgb(0, 167, 111)',
-                    backgroundColor: 'rgba(0, 167, 111, 0.08)',
-                  },
-                }}
               >
                 {item.label}
-              </ListItemButton>
+              </CSidebarSubItemMobile>
             ))}
         </Stack>
       </Popover>
