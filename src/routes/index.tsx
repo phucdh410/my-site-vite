@@ -37,7 +37,9 @@ export const routes: RouteObject[] = [
           },
           {
             path: '/booking',
-            element: <div>Booking page</div>,
+            element: asyncLayout(
+              () => import('@/modules/booking/pages/MBookingPage'),
+            ),
           },
           {
             path: '/hounter',

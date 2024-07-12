@@ -11,7 +11,7 @@ export const CHeader = () => {
       height={HEADER_HEIGHT}
       bgcolor="white"
       zIndex={1}
-      boxShadow="0 1px 10px 0px rgb(0 0 0 / 10%)"
+      boxShadow="0 1px 10px 0px rgb(0 0 0 / 5%)"
     >
       <Stack
         height="100%"

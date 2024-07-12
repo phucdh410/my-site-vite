@@ -26,7 +26,7 @@ export const CDrawer = styled(Drawer, {
   ...(open ? { ...styleIn(theme) } : { ...styleOut(theme) }),
 
   '.MuiPaper-root.MuiDrawer-paper': {
-    boxShadow: '2px 0 6px 2px rgb(0 0 0 / 6%)',
+    boxShadow: '2px 0 6px 2px rgb(0 0 0 / 3%)',
     borderRight: 'none',
 
     ...(open ? { ...styleIn(theme) } : { ...styleOut(theme) }),

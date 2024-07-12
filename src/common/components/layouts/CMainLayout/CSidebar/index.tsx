@@ -33,7 +33,11 @@ export const CSidebar = ({ open }: { open: boolean }) => {
               }}
             />
           </Box>
-          <Typography fontSize="2.5rem" fontFamily="var(--font-honk)">
+          <Typography
+            fontSize="2.5rem"
+            fontFamily="var(--font-honk)"
+            sx={{ userSelect: 'none' }}
+          >
             ĐHP.410
           </Typography>
         </Stack>
