@@ -60,6 +60,12 @@ export const routes: RouteObject[] = [
             ),
           },
           {
+            path: '/confirm',
+            element: asyncLayout(
+              () => import('@/modules/confirm/pages/MConfirmPage'),
+            ),
+          },
+          {
             path: '/user',
             children: [
               {

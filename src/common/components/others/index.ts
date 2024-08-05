@@ -1,3 +1,4 @@
+export * from './CConfirm';
 export * from './CContextMenu';
 export * from './CErrorPage';
 export * from './CErrorPage';
